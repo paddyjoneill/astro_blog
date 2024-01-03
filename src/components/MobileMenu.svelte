@@ -10,7 +10,7 @@
 </script>
 
 <!-- todo accessibility stuff -->
-<button on:click={onClick}>
+<button on:click={onClick} aria-label="Open Navigation Menu">
   <!-- hamburger icon -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,11 @@
     transition:fly={{ y: -200, duration: 400 }}
   >
     <div class="flex flex-col p-4 gap-4">
-      <button on:click={onClick} class="h-12 self-end">
+      <button
+        on:click={onClick}
+        class="h-12 self-end"
+        aria-label="Close Navigation Menu"
+      >
         <!-- close icon -->
         <svg
           xmlns="http://www.w3.org/2000/svg"

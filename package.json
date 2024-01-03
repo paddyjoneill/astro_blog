@@ -19,6 +19,7 @@
     "@fontsource-variable/cabin": "^5.0.17",
     "@tailwindcss/typography": "github:tailwindcss/typography",
     "astro": "^4.0.8",
+    "astro-robots-txt": "^1.0.0",
     "prettier-plugin-tailwindcss": "^0.5.10",
     "svelte": "^4.2.8",
     "tailwindcss": "^3.4.0",
