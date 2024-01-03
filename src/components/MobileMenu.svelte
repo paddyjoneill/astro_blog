@@ -10,7 +10,7 @@
 </script>
 
 <!-- todo accessibility stuff -->
-<button on:click={onClick} aria-label="Open Navigation Menu">
+<button on:click={onClick} aria-label="Open Navigation Menu" class="sm:hidden">
   <!-- hamburger icon -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
