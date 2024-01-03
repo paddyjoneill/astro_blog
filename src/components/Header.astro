@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { GITHUB_URL, SITE_TITLE, TWITTER_URL } from "../consts";
-import MenuIcon from "./MenuIcon.astro";
+import MobileMenu from "./MobileMenu.svelte";
 
 const iconSize = 20;
 ---
@@ -45,9 +45,6 @@ const iconSize = 20;
         </a>
       </div>
     </div>
-    <!-- todo accessibility stuff -->
-    <div class="sm:hidden h-full flex items-center">
-      <MenuIcon />
-    </div>
+    <MobileMenu client:load />
   </nav>
 </header>
