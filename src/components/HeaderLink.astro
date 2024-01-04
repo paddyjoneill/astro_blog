@@ -1,14 +1,14 @@
 ---
 interface Props {
-	href: string
+  href: string;
 }
 
-const {href} = Astro.props
+const { href } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
-<a href={href} class={`text-2xl text-black ${isActive ? "font-semibold" : ""}`}>
-	<slot />
+<a href={href} class={`text-xl text-black ${isActive ? "font-semibold" : ""}`}>
+  <slot />
 </a>
