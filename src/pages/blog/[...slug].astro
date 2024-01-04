@@ -13,11 +13,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { heroImage, title } = post.data;
+const { heroImage, title, description } = post.data;
 const { Content } = await post.render();
 ---
 
-<MainLayout>
+<MainLayout title={title} description={description}>
   <BlogBanner backgroundImage={heroImage} title={title} />
   <div class="prose-img:mx-auto">
     <Content />
