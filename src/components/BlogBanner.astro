@@ -4,10 +4,9 @@ import { Image } from "astro:assets";
 interface Props {
   backgroundImage: any;
   title: string;
-  pubDate: string;
 }
 
-const { backgroundImage, title, pubDate } = Astro.props;
+const { backgroundImage, title } = Astro.props;
 ---
 
 <div class="h-64 overflow-hidden relative">
