@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
@@ -10,16 +11,26 @@ const posts = (await getCollection("blog")).sort(
 
 <MainLayout>
   <section>
-    <ul>
+    <ul class="w-full flex flex-col items-center">
       {
         posts.map((post) => (
           <li>
             <a href={`/blog/${post.slug}/`}>
-              <img width={720} height={360} src={post.data.heroImage} alt="" />
-              <h4 class="title">{post.data.title}</h4>
-              <p class="date">
-                <FormattedDate date={post.data.pubDate} />
-              </p>
+              <Image
+                width={720}
+                height={360}
+                src={post.data.heroImage}
+                alt=""
+                transition:name="image"
+              />
+              <div class="flex gap-4">
+                <h2 class="m-0 text-lg" transition:name="title">
+                  {post.data.title}
+                </h2>
+                <p class="text-lg">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </div>
             </a>
           </li>
         ))
