@@ -11,11 +11,11 @@ const posts = (await getCollection("blog")).sort(
 
 <MainLayout>
   <section>
-    <ul class="w-full flex flex-col items-center">
+    <ul class="flex w-full flex-col items-center pl-0">
       {
         posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}/`}>
+            <a href={`/blog/${post.slug}/`} class="no-underline">
               <Image
                 width={720}
                 height={360}
